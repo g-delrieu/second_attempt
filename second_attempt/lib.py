@@ -47,6 +47,26 @@ def clean_data(data):
     data.loc[:, 'Frequency'] = data['Frequency'].map(drows)
     return data
 
+def try_me():
+    human_move = input("Choose your gesture (either rock, paper or scissors): ")
+    cpu_move = random.choice(gestures)
+    if human_move == cpu_move:
+        return 0
+    elif human_move == "rock" and cpu_move == "scissors":
+        return 2
+    elif human_move == "paper" and cpu_move == "rock":
+        return 2
+    elif human_move == "scissors" and cpu_move == "paper":
+        return 2
+    elif human_move == "scissors" and cpu_move == "rock":
+        return 1
+    elif human_move == "rock" and cpu_move == "paper":
+        return 1
+    elif human_move == "paper" and cpu_move == "scissors":
+        return 1
+    else:
+        return print("Rematch! Invalid gestures.")
+
 
 if __name__ == '__main__':
     # For introspections purpose to quickly get this functions on ipython
